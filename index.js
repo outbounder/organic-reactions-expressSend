@@ -1,6 +1,6 @@
 var response = require(process.cwd()+"/node_modules/express").response
 
-var expressSend = module.exports = function(c, next){
+var expressSend = module.exports.expressSend = function(c, next){
   if(c.res.body) {
     var oldProto = c.res.__proto__;
     c.res.app = {settings: {}, get:function(){}}
